@@ -1,0 +1,24 @@
+body {
+  padding: 6% 10%;
+}
+body > * {
+  float: left;
+}
+p, ol {
+  max-width: 18em;
+}
+a {
+	padding: 1em;
+}
+h1 {
+  padding-right: 3%;
+  max-width: 30em;
+  min-width: 3em;
+}
+ul {
+  float: right;
+  width: 3em;
+}
+ul li {
+  float: left;
+}
