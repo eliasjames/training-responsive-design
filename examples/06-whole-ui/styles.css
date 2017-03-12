@@ -3,6 +3,9 @@
   box-sizing: border-box;
   float: left;
 }
+main, section, nav {
+  padding: 1em;
+}
 .list-view-controls {
  	position: absolute;
 	right: 2em;
@@ -35,9 +38,6 @@
   content: "";
   display: table;
 }
-main, section, sidebar {
-  padding: 1em;
-}
 .pl-items-wrapper {
   margin: 0 auto;
   width: 80%;
@@ -45,15 +45,22 @@ main, section, sidebar {
 .push-right {
   float: right;
 }
-sidebar {
+nav {
 	background-color: lightblue;
   padding-bottom: 500em;
   margin-bottom: -500em;
 }
+nav ul {
+  flex-direction: column;
+}
 section {
 	position: relative;
 }
-section ul {
+section p img {
+  float: right;
+  margin-left: 0.5em;
+}
+ul {
   display: flex;
 }
 ul {
@@ -62,6 +69,7 @@ ul {
 }
 ul li {
   border: 3px solid darkgray;
+  flex-basis: auto;
   list-style-type: none;
   padding: 1em;
 }
@@ -71,6 +79,9 @@ ul li {
   }
 }
 @media screen and ( max-width: 768px ) {
+  nav ul {
+    flex-direction: row;
+  }
   .sm-top {
     margin-bottom: 0;
     padding-bottom: 0;
@@ -85,5 +96,23 @@ ul li {
   }
   .sm-bottom {
     width: 100%;
+  }
+  nav ul {
+    min-width: 320px;
+  }
+}
+@media screen and ( min-width: 320px ) and ( max-width: 500 ) {
+  nav h2 {
+  }
+}
+@media screen and ( max-width: 320px ) {
+  main, nav {
+    min-width: 320px;
+  }
+  .pl-items-wrapper ul li {
+    border: none;
+    display: block;
+    list-style-type: square;
+    padding: 0.5em;
   }
 }
