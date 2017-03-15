@@ -101,8 +101,9 @@ ul li {
     min-width: 320px;
   }
 }
-@media screen and ( min-width: 320px ) and ( max-width: 500 ) {
+@media screen and ( min-width: 320px ) and ( max-width: 500px ) {
   nav h2 {
+    margin-left: -10em;
   }
 }
 @media screen and ( max-width: 320px ) {
