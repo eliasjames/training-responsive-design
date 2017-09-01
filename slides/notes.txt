@@ -1,0 +1,166 @@
+1. Basics
+- CSS 1/2/3
+- media types
+- Measurement units (px, pt/em, %) 
+- 'inherit'
+2. Backgrounds
+  - color
+  - image
+    - size
+    - position
+    - repeat: space/round (all modern)
+    - attachment
+    - origin/clip
+      - % in bg-size determined by origin
+    - size (cover/contain)
+  - shorthand syntax
+    - only one arg required (sets others to default)
+    - if size, must immediately follow position
+    - horizontal, then vertical
+  - multiple backgrounds (layers)
+  - gradients
+    - linear
+    - radial
+1. Content Boxes
+- Box model
+  - Syntax (TRouBLe)
+  - Padding: no negative 
+  - Borders
+    - no % values
+    - defined styles
+    - default color: content foreground
+    - no negatives
+- Box backgrounds
+2. Flow
+- LTR, Top to Bottom
+- Can be changed
+- Elements can be removed from flow
+- Replaced and non- (img/input versus p/svg)
+- Display 
+  - types: block, inline, inline-block, and none
+  - changing CSS doesn't affect HTML (ex: invalid to nest block within inline)
+- Containing block (closest ancestor & initial)
+- Calculating width
+  - Rule: sum of horizontal components equal width of container
+  - box-sizing property
+  - 'auto'
+    - padding & border need specific values ( incl 0 )
+    - only available on content, L&R margin
+    - overconstrained: if all 3 set, margin-right becomes auto
+    - width swallows the auto margin
+  - negative margins: also must follow width rule
+  - replaced elements: auto = content width
+- Calculating height
+  - element's content determines default
+  - relationship to width
+  - overflow property
+  - dynamic vertical centering is hard
+    - in normal flow, margin: auto === 0
+    - if containing block has height ( != auto ), % works
+    - however content may still not be centered
+  - containing block
+    - without padding/border, contained margins "stick out"
+    - collapsing margins ( padding/border applies here too )
+- Exercises
+  - horizontally center <body> and others
+  - change <nav><a>... to block (whole block acts as link)
+  - change <ul><li>... to inline, add border-right
+  - vertical centering
+3. Inline elements
+- Basics
+  - Width constrained by parent block
+  - width and height properties are ignored
+  - text-align property
+  - background applies to padding
+- Calculating size
+  - Non-replaced
+    - leading ( line-height - font-size / 2 )
+    - vertical-align, from baseline, determined by line-height
+    - margin, padding & borders don't affect line-height
+  - Replaced
+    - line is made tall enough to accommodate without changing line-height
+    - box bottom rests on the baseline
+    - adding bottom padding/border/margin moves content up
+    - Replaced element still has line-height (SVG text)
+- Exercise
+  - Examine text-align wrap using borders
+  - background applies to padding
+4. Floats
+- Basics
+  - margins do not collapse on floated elements
+  - Floats relative to a containing block
+  - Floated elements act like block-level
+- Floated elements...
+  - get processed in the order they appear in the document
+  - stay inside containing block
+  - appear as high as possible inside the containing block
+  - stack against other floats, but don't overlap
+  - bump to a new line if not enough room horizontally
+- Floats and negative margins
+  - Floats observe the negative-margin equation
+  - Gotcha: beware pushing elements upward (browser may/not reflow)
+  - Outside the container, floats can interact with normal flow
+    - Inline boxes render on top of the float
+    - Block boxes
+      - Content renders on top of float
+      - Borders/background render behind float
+- Clear
+- shape-outside values
+  - image eg: shape-outside: url(moon.png)
+    - auto-detects transparency from image file
+    - can specify with shape-image-threshold
+  - inset
+  - circle/ellipse/polygon
+5. Positioning
+- Basics
+  - static: default value, observes flow
+  - relative
+    - offset from parent
+    - shape of element & space left behind as if flowed
+  - absolute
+    - offset from parent
+    - completely removed from flow
+    - space left behind is closed up
+    - becomes block level automatically
+    - can escape container, overlap other elements
+    - also establishes containing block
+  - fixed: same as absolute, but parent === viewport
+  - sticky: sticky-constraint rectangle
+- Containing block
+  - static: closest block-level ancestor
+  - relative: same
+  - absolute
+    - nearest ancestor with non-static value
+    - rules differ for inline vs block 
+    - set to content edge and padding edge respectively
+- Offsets
+  - TRouBLe
+  - measured from parent's corresponding side (not top left for all)
+  - height & width calculated from offsets if not specified
+  - height & width & offsets can cause container escape
+  - min/max/width/height
+  - auto has special behavior
+- overflow
+  - visible
+  - scroll
+    - scroll bars always appear
+    - may affect print ( act as visible )
+  - hidden
+  - auto: may show/hide scrollbar dynamically ( depends on browser )
+- visibility
+  - visible, hidden, collapse, inherit
+  - show/hide element
+  - unlike display: none, invisible elements are rendered
+  - descendents of invisibles can be overridden
+- z-index
+  - stacking context 
+    - root element
+    - ancestor with position absolute/relative & z-index
+    - ancestor with position fixed/sticky
+    - many others ( flexbox, opacity... )
+  - auto is equal to 0
+  - index not affected by elements in other contexts
+N. Misc
+- LTR behavior can be reversed
+- tables formatting is its own subject
+- list-style-position determines bullet inside or outside list
