@@ -21,7 +21,7 @@
   - gradients
     - linear
     - radial
-1. Content Boxes
+3. Content Boxes
 - Box model
   - Syntax (TRouBLe)
   - Padding: no negative 
@@ -31,7 +31,7 @@
     - default color: content foreground
     - no negatives
 - Box backgrounds
-2. Flow
+4. Flow
 - LTR, Top to Bottom
 - Can be changed
 - Elements can be removed from flow
@@ -66,7 +66,7 @@
   - change <nav><a>... to block (whole block acts as link)
   - change <ul><li>... to inline, add border-right
   - vertical centering
-3. Inline elements
+5. Inline elements
 - Basics
   - Width constrained by parent block
   - width and height properties are ignored
@@ -85,7 +85,7 @@
 - Exercise
   - Examine text-align wrap using borders
   - background applies to padding
-4. Floats
+6. Floats
 - Basics
   - margins do not collapse on floated elements
   - Floats relative to a containing block
@@ -111,7 +111,7 @@
     - can specify with shape-image-threshold
   - inset
   - circle/ellipse/polygon
-5. Positioning
+7. Positioning
 - Basics
   - static: default value, observes flow
   - relative
