@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Z-Index</title>
+  <meta name="description" content="Z-Index">
+  <meta name="author" content="Elias Carlston">
+    <style>
+      main {
+        margin-left: 2em;
+      }
+      section {
+        margin-bottom: 0.5em;
+        padding: 1em;
+      }
+      section, span, a, p, em {
+        border: 2px solid black;
+        margin-right: 0.5em;
+        padding: 1em;
+      }
+      p { 
+        background-color: white;
+        height: 5em;
+        position: relative;
+        width: 5em;
+      }
+      .example {
+        background: white;
+        height: 15em;
+        position: absolute;
+        width: 75%;
+        z-index: 1;
+      }
+      .second {
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+      }
+      .negative-container {
+        margin: 10% auto;
+        width: 10%;
+      }
+      .one {
+        margin-left: -2em;
+        margin-top: -2em;
+        z-index: 1;
+      }
+      .two {
+        margin-left: -4em;
+        margin-top: -4em;
+      }
+      .three {
+        margin-left: -6em;
+        margin-top: -6em;
+      }
+    </style>
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <h1>Z-Index</h1>
+  <main>
+    <section class="example first">    
+      <!-- only here to keep <p>s inside <section> -->
+      <div class="negative-container">
+        <p class="one">
+          Paragraph
+        </p> 
+        <p class="two">
+          Paragraph
+        </p> 
+        <p class="three">
+          Paragraph
+        </p> 
+      </div>
+    </section>    
+    <section class="example second">    
+      <!-- only here to keep <p>s inside <section> -->
+      <div class="negative-container">
+        <p class="one">
+          Paragraph
+        </p> 
+        <p class="two">
+          Paragraph
+        </p> 
+        <p class="three">
+          Paragraph
+        </p> 
+      </div>
+    </section>    
+  </main>
+</body>
+</html>
