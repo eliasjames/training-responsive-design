@@ -41,7 +41,7 @@
   - changing CSS doesn't affect HTML (ex: invalid to nest block within inline)
 - Containing block (closest ancestor & initial)
 - Calculating width
-  - Rule: sum of horizontal components equal width of container
+  - Rule: sum of horizontal components equal or less than width of container
   - box-sizing property
   - 'auto'
     - padding & border need specific values ( incl 0 )
