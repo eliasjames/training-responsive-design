@@ -1,24 +1,33 @@
 body {
-  padding: 6% 10%;
+  margin: 5%;
+  width: 80%;
 }
-body > * {
-  float: left;
-}
-p, ol {
-  max-width: 18em;
-}
-a {
-	padding: 1em;
-}
-h1 {
-  padding-right: 3%;
-  max-width: 30em;
-  min-width: 3em;
+header, main, footer {
+  border: 1px solid;
+  overflow: auto;
 }
 ul {
-  float: right;
-  width: 3em;
+  list-style-type: none;
 }
-ul li {
+nav ul li {
   float: left;
+  padding: 0.125em;
+}
+.big {
+  border-right: 1px solid;
+  float: left;
+  width: 66%;
+}
+.big h1 {
+  width: 37%;
+}
+.big h1, .big table {
+  margin: 5% auto;
+}
+.small {
+  float: right;
+  width: 33%;
+}
+footer {
+  clear: both;
 }
