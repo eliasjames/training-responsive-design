@@ -1,0 +1,53 @@
+/* foundation resets */
+table tbody tr:nth-child(even) {
+  background-color: transparent;
+}
+
+/* my styles */
+body {
+  margin: 0 auto;
+  width: 80%;
+}
+header, main, footer {
+  border: 1px solid;
+  overflow: auto;
+}
+header {
+  height: 7em;
+}
+.logo-home-link {
+  border: 1px solid;
+}
+.logo-home-link div {
+  margin: 0.75em auto;
+  text-align: center;
+  width: 2.5em;
+}
+header nav {
+  float: left;
+  margin: 0 auto;
+  width: 40%;
+}
+.login a {
+  display: block;
+}
+.signup {
+  font-size: 0.8em;
+}
+nav ul li {
+  float: left;
+  list-style-type: none;
+  margin-left: 0.125em;
+  padding: 0.125em;
+}
+section {
+  padding: 0.5em;
+}
+section h1 {
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+sidebar {
+  padding: 0.5em;
+}

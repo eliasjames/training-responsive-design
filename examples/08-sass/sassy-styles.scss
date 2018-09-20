@@ -1,15 +1,25 @@
+$top-right: 3em;
+$fancy-color: orange;
+@mixin my-border( $color ) {
+  border: $top-right solid $color;
+}
+
 .list-view-controls {
  	position: absolute;
-	right: 2.5em;
-	top: 2.5em; 
+	right: $top-right;
+	top: $top-right; 
 
   :hover + .pl-items-wrapper ul {
     flex-direction: column;
 
     li {
-      border: none;
+      @include my-border( 'lightblue' );
       list-style-type: square;
       padding: 0.5em;
+
+      a {
+        @include my-border( $fancy-color );
+      }
     }
   }
 }
